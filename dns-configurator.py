@@ -42,7 +42,7 @@ sec     IN  A           {}
 client  IN  A           {}
 '''.format(domainName, domainName, domainName, domainName, ip, ip, ip, ip)
 print(forDomain)
-os.system("echo "+forDomain+" >> /etc/bind/"for."+domainName)
+os.system("echo '"+forDomain+"' >> /etc/bind/for."+domainName)
 revDomain='''$TTL 86400
 @   IN  SOA     pri.{}. root.{}. (
         2011071002  ;Serial
@@ -62,4 +62,4 @@ client  IN  A           {}
 202     IN  PTR         client.{}.
 '''.format(domainName, domainName, domainName, domainName, domainName, ip, ip, ip, domainName, domainName, domainName)
 print(revDomain)
-os.system("echo "+revDomain+" >> /etc/bind/"rev."+domainName)
+os.system("echo '"+revDomain+"' >> /etc/bind/rev."+domainName)
